@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5rem;
+      
+      h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+    
+    .actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      
+      button {
+        margin-right: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        
+        
+        &.btn-danger {
+          background-color: red;
+          color: #000;
+        }
+      }
+    }
+  }
+  

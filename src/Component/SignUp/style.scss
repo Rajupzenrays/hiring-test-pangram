@@ -1,0 +1,129 @@
+.signup-container {
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    .ant-input{
+        background-color: #fff !important;
+    }
+
+    .logo-container {
+        margin-top: 5px;
+    }
+
+    .signup-inner-container {
+        background-color: #f5f5f5;
+        width: 550px;
+        border: 2px solid #000;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        #signup{
+            width: 350px !important;
+        }
+    }
+
+    .form-title {
+        // width: 307px;
+        height: 30px;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 28px;
+        line-height: 30px;
+        color: #20315F;
+    }
+
+    .form-input-text {
+        width: 100%;
+        background-color: #EEF2F3;
+        border: none;
+        outline: none;
+        box-shadow: none !important;
+    }
+
+    .form-input-text:hover {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    .form-input-label {
+        color: #fff;
+        margin-left: 10px;
+    }
+
+    .form-input-username {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 58px !important;
+        background-color: #fff !important;
+        border-radius: 8px 8px 0px 0px;
+        border-bottom: 2px solid #20315F;
+        // margin-bottom: 24px;
+    }
+
+    .form-input-password {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        height: 32px !important;
+        background-color: #EEF2F3 !important;
+        border-radius: 8px 8px 0px 0px;
+        border-bottom: 2px solid #20315F !important;
+        // margin-bottom: 6px;
+
+        .form-eye-icon {
+            margin-right: 10px;
+        }
+    }
+
+    .ant-form-item-control-input-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // margin-bottom: 10px;
+    }
+    .ant-form-item{
+        margin-bottom: 0px;
+    }
+    .form-submit-button {
+        background-color: #3e8e41;
+        border-radius: 30px;
+        color: #F1F0F0;
+        width: 200px;
+        height: 35px;
+        margin-bottom: 5px;
+        margin-top: 10px;
+        align-items: center;
+    }
+
+    .ant-select-focused .ant-select-selector,
+    .ant-select-selector:focus,
+    .ant-select-selector:active,
+    .ant-select-open .ant-select-selector {
+        border-color: #d9d9d9 !important;
+        box-shadow: none !important;
+    }
+
+    .ant-input {
+        border-color: none;
+        border-inline-end-width: 0 !important;
+        box-shadow: none !important;
+        background-color: #EEF2F3;
+        color: #20315F !important;
+        font-style: normal !important;
+        font-weight: 500 !important;
+        font-size: 17px !important;
+    }
+
+    .anticon.ant-input-password-icon {
+        color: #20315F !important;
+        font-size: 20px;
+    }
+}
