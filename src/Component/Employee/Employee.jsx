@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Button, Table } from 'antd';
 import './Employee.scss';
 
 function Employee() {
@@ -30,6 +31,39 @@ function Employee() {
       .catch(err => console.log(err));
   };
 
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'NAME',
+      key: 'name',
+    },
+    {
+      title: 'Email',
+      dataIndex: 'EMAIL',
+      key: 'email',
+    },
+    {
+      title: 'Department',
+      dataIndex: 'DEPARTMENT',
+      key: 'department',
+    },
+    {
+      title: 'Salary',
+      dataIndex: 'SALARY',
+      key: 'salary',
+    },
+    {
+      title: 'Action',
+      key: 'action',
+      render: (text, record) => (
+        <span>
+          <Link to={`/employeeEdit/${record.ID}`} className='edit-btn'>Edit</Link>
+          <Button onClick={e => handleDelete(record.ID)} className='delete-btn'>Delete</Button>
+        </span>
+      ),
+    },
+  ];
+
   return (
     <div className='employee-container'>
       <div className='employee-header'>
@@ -37,34 +71,9 @@ function Employee() {
         <Link to='/create' className='btn btn-success'>Add Employee</Link>
       </div>
       <div className='employee-table'>
-        <table className='table'>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Department</th>
-              <th>Salary</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((employee, index) => {
-              {console.log("data",data)}
-              return (
-                <tr key={index}>
-                  <td>{employee.NAME}</td>
-                  <td>{employee.EMAIL}</td>
-                  <td>{employee.DEPARTMENT}</td>
-                  <td>{employee.SALARY}</td>
-                  <td>
-                    <Link to={`/employeeEdit/${employee.ID}`} className='edit-btn'>Edit</Link>
-                    <button onClick={e => handleDelete(employee.ID)} className='delete-btn'>Delete</button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <Table dataSource={data} columns={columns} rowKey="ID" pagination={{
+          pageSize: 5,
+        }}/>
       </div>
     </div>
   );

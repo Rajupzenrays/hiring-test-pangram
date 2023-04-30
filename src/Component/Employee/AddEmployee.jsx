@@ -8,27 +8,20 @@ function AddEmployee() {
 		name: '',
 		email: '',
 		password: '',
-		address: '',
 		salary: '',
-		// image: ''
 	})
 	const navigate = useNavigate()
 
 	const handleSubmit = (event) => {
+		console.log("event", event, data)
 		event.preventDefault();
-		const formdata = new FormData();
-		formdata.append("name", data.name);
-		formdata.append("email", data.email);
-		formdata.append("password", data.password);
-		formdata.append("address", data.address);
-		formdata.append("salary", data.salary);
-		// formdata.append("image", data.image);
-		axios.post('http://localhost:8081/create', formdata)
-		.then(res => {
+		axios.post('http://localhost:8081/create', data)
+		  .then(res => {
 			navigate('/employee')
-		})
-		.catch(err => console.log(err));
-	}
+		  })
+		  .catch(err => console.log(err));
+	  }
+	  	  
 	return (
 		<div className='add-employee-container'>
 			<h2>Add Employee</h2>
